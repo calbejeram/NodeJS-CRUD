@@ -16,17 +16,19 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Skillset ID</th>
                     <th scope="col">Skills</th>
                     <th scope="col">Level</th>
+                    <th scope="col">Account ID</th>
                 </tr>
             </thead>
             <tbody>
-                {{#each accounts}}
+                {{#each skillset}}
                     <tr>
-                        <th scope="row">{{@key}}</th>
+                        <th scope="row">{{this.skillset_id}}</th>
                         <td>{{this.title}}</td>
                         <td>{{this.level}}</td>
+                        <td>{{this.account_id}}</td>
                     </tr>
                 {{/each}}
             </tbody>

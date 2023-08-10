@@ -14,7 +14,7 @@ router.get('/deleteaccount/:account_id', registrationController.deleteaccount);
 
 router.get('/logout', registrationController.logout);
 
-router.get('/skillsets', registrationController.skillsets)
+router.get('/skillsets/:account_id', registrationController.skillsets)
 
 
 module.exports = router;

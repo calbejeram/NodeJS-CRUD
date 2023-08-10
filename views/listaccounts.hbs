@@ -16,7 +16,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Account ID</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Email</th>
@@ -26,14 +26,14 @@
             <tbody>
                 {{#each accounts}}
                     <tr>
-                        <th scope="row">{{@key}}</th>
+                        <th scope="row">{{this.account_id}}</th>
                         <td>{{this.first_name}}</td>
                         <td>{{this.last_name}}</td>
                         <td>{{this.email}}</td>
                         <td>
                             <a class="btn btn-success" href="/auth/updateform/{{this.email}}"><i class="bi bi-pencil-square"></i></a>
                             <a class="btn btn-danger" href="/auth/deleteaccount/{{this.account_id}}"><i class="bi bi-trash"></i></a>
-                            <a class="btn btn-warning" href="/auth/skillsets"><i class="bi bi-box-arrow-up-right"></i></a>
+                            <a class="btn btn-warning" href="/auth/skillsets/{{this.account_id}}"><i class="bi bi-box-arrow-up-right"></i></a>
                         </td>
                     </tr>
                 {{/each}}

@@ -212,27 +212,20 @@ exports.deleteaccount = (request, response) => {
 
 // See Skillsets from Database
 exports.skillsets = (request, response) => {
-    const skillset_id= request.params.skillset_id;
+    const account_id= request.params.account_id;
 
     db.query(
-        "SELECT * FROM skillsets WHERE skillset_id = ?",
-        skillset_id,
+        "SELECT * FROM skillsets WHERE account_id = ?",
+        account_id,
         (error, result) => {
-            if (error) {
-                console.log(error);
-            }
-            db.query(
-                "SELECT * FROM skillsets WHERE skillset_id= ?",
-                (error, result) => {
-                    response.render("skillsets",
-                    {
-                        title: "Skillsets",
-                        accounts: result
-                    })
-                }
-            )
+            console.log(result);
+            response.render('skillsets',
+            {
+                title: "Skillsets",
+                skillset: result
+            });
         }
-    )
+    );
 }
 
 // Logout session
